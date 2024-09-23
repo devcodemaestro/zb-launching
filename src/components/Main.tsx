@@ -1,33 +1,54 @@
-import React from "react";
+"use client"; // 클라이언트 컴포넌트로 지정
+import { useRef, useState } from "react";
+import Button from "./Button";
 
-const Main = ({ setCurrentComponent }) => {
+const Main = () => {
+  const [isEditing, setIsEditing] = useState(true); // 편집 상태 관리
+  const [address, setAddress] = useState(""); // 수정 가능한 주소값 관리
+  const inputRef = useRef(null); // input의 포커스를 제어할 ref
+
+  // Enter 키 처리 (onKeyDown 사용)
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      setIsEditing(false); // Enter를 누르면 텍스트로 변환
+    }
+  };
+
+  // 텍스트 클릭 시 input에 포커스가 가도록 처리
+  const handleTextClick = () => {
+    setIsEditing(true);
+    setTimeout(() => {
+      inputRef.current?.focus(); // input이 나타난 후 포커스 설정
+    }, 0);
+  };
+
   return (
     <main className="mx-auto mt-3 text-center w-72">
       <div className="py-0.5 border-y-2 border-black"></div>
       <div className="text-left">
-        <h3 className="mt-6 text-lg font-black">1. 어떤 방식으로 골라볼까?</h3>
+        <h3 className="mt-6 text-lg font-black">1. 회사 위치를 알려줄래?</h3>
       </div>
-      <div className="mt-16 w-76 p-2 flex justify-end items-center text-lg font-bold gap-6">
-        <button
-          className="h-48 px-6 flex items-center justify-center rounded-xl border-2 border-black border-dashed bg-white hover:bg-gray-200 hover:border-gray-600 active:bg-gray-700 transition duration-300 ease-in-out"
-          onClick={() => setCurrentComponent("Preference")}
-        >
-          <p>오늘 이게 땡겨ㅎ</p>
-        </button>
-        <button
-          className="h-48 px-6 flex items-center justify-center rounded-xl border-2 border-black border-dashed bg-white hover:bg-gray-200 hover:border-gray-600 active:bg-gray-700 transition duration-300 ease-in-out"
-          onClick={() => setCurrentComponent("NotPreference")}
-        >
-          <p>오늘 이게 안땡겨ㅜ</p>
-        </button>
+      <div className="mt-8 w-72 p-2 flex justify-center items-center text-lg font-bold gap-6">
+        {isEditing ? (
+          <input
+            ref={inputRef} // input에 ref 연결
+            className="w-72 h-9 px-6 flex items-center justify-center rounded-xl border-2 border-black bg-white focus:bg-gray-100 focus:border-gray-500 hover:border-gray-400 transition duration-200 ease-in-out"
+            placeholder="판교역로 235, 분당 주공"
+            value={address} // useState로 관리되는 값을 input에 설정
+            onChange={(e) => setAddress(e.target.value)} // 입력값을 업데이트
+            onKeyDown={handleKeyDown} // Enter 키 처리
+          />
+        ) : (
+          <p
+            onClick={handleTextClick} // 텍스트 클릭 시 input으로 전환 및 포커스
+            className="w-72 h-9 px-6 flex items-center justify-center rounded-xl border-2 border-black cursor-pointer"
+          >
+            {address || "판교역로 235, 분당 주공"} {/* 입력된 주소 표시 */}
+          </p>
+        )}
       </div>
-      <div>
-        <button
-          className="w-64 h-24 mt-6 mx-auto flex items-center justify-center rounded-xl border-2 border-black border-dashed bg-white hover:bg-gray-300 hover:border-gray-600 active:bg-gray-700 transition duration-300 ease-in-out"
-          onClick={() => setCurrentComponent("Random")}
-        >
-          <p className="text-2xl font-bold">아무거나</p>
-        </button>
+      <div className="mt-52">
+        <Button href="/choose-type" type="action" text="시작하기"></Button>
       </div>
       <div className="mt-10 py-0.5 border-y-2 border-black"></div>
     </main>

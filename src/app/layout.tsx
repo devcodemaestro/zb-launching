@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./styles/globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const pretendard = localFont({
   src: "/fonts/PretendardVariable.woff2",
@@ -67,9 +69,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${pretendard.variable} antialiased max-w-[390px] h-screen mx-auto overflow-hidden box-border`}
+        className={`${pretendard.variable} antialiased max-w-[390px] h-screen mx-auto overflow-hidden box-border break-keep px-6 min-h-screen font-[family-name:var(--font-pretendard)]`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
