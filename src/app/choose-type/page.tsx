@@ -23,7 +23,7 @@ const page = () => {
         ></Button>
       </div>
       <div>
-        <Button href="/random" type="random" text="아무거나"></Button>
+        <Button href="/result" type="random" text="아무거나"></Button>
       </div>
       <div className="mt-[2vh] py-0.5 border-y-2 border-black"></div>
     </main>

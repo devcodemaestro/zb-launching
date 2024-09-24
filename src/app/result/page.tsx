@@ -15,9 +15,7 @@ const page = () => {
           text="오늘 이게 땡겨요ㅎ"
         ></Button>
       </div>
-      <div>
-        <Button href="/random" type="isLike" text=""></Button>
-      </div>
+      <div>{/* <Button href="/random" type="isLike" text=""></Button> */}</div>
       <div className="mt-[2vh] py-0.5 border-y-2 border-black"></div>
     </main>
   );

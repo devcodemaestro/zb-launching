@@ -1,32 +1,66 @@
-import Button from "@/components/Button";
+"use client";
 
-const page = () => {
+import Button from "@/components/Button";
+import { useState } from "react";
+
+const NonPreference = () => {
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+
+  // 항목 선택 처리 함수
+  const handleSelect = (item: string) => {
+    if (selectedItems.includes(item)) {
+      // 이미 선택된 항목일 경우 제거
+      setSelectedItems(selectedItems.filter((i) => i !== item));
+    } else {
+      // 선택된 항목이 5개 미만일 때만 추가
+      if (selectedItems.length < 5) {
+        setSelectedItems([...selectedItems, item]);
+      }
+    }
+  };
+
+  // 항목이 선택되었는지 확인
+  const isSelected = (item: string) => selectedItems.includes(item);
+
   return (
     <main className="mx-auto mt-[1.5vh] text-center w-72">
       <div className="py-0.5 border-y-2 border-black"></div>
       <div className="text-left">
-        <h3 className="mt-[2vh] text-lg font-black">
-          1. 회사 위치를 알려줄래?
-        </h3>
+        <h3 className="mt-[2vh] text-lg font-black">3. 오늘 이게 땡겨ㅎ</h3>
       </div>
-      <div className="mt-[3vh] mx-0.5 p-2 flex justify-end items-center text-lg font-bold gap-6">
-        <Button
-          href="/preference"
-          type="primary"
-          text="오늘 이게 땡겨요ㅎ"
-        ></Button>
-        <Button
-          href="/not-preference"
-          type="primary"
-          text="오늘 이게 안땡겨ㅜ"
-        ></Button>
+      <div className="mt-[3vh] flex-wrap flex justify-center items-center text-lg font-bold gap-3">
+        {[
+          { text: "간단한거", subText: "토스트 밥버거 브리또 포케, 죽" },
+          { text: "면이 땡겨", subText: "라면, 우동, 국수" },
+          { text: "뜨끈한 국물", subText: "국밥, 부대찌개, 칼국수" },
+          { text: "밥이 땡겨", subText: "백반, 국밥, 덮밥, 볶음밥" },
+          { text: "바삭한거", subText: "돈까스, 튀김덮밥" },
+          { text: "미국 감성", subText: "서브웨이, 햄버거, 피자, 샐러드" },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className={`w-22 h-36 py-3 mx-auto flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-black border-dashed bg-white hover:bg-gray-300 hover:border-gray-600 active:bg-gray-700 transition duration-300 ease-in-out 
+              ${
+                isSelected(item.text)
+                  ? "border-gray-600 bg-gray-200"
+                  : "border-black bg-white"
+              } 
+              hover:bg-gray-200 hover:border-gray-600 active:bg-gray-700 transition duration-300 ease-in-out cursor-pointer`}
+            onClick={() => handleSelect(item.text)}
+          >
+            <div className="text-center">
+              <p className="text-lg">{item.text}</p>
+              <p className="text-sm text-gray-500">{item.subText}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div>
-        <Button href="/random" type="random" text="아무거나"></Button>
+      <div className="mt-[2vh]">
+        <Button href="/result" type="action" text="다음"></Button>
       </div>
       <div className="mt-[2vh] py-0.5 border-y-2 border-black"></div>
     </main>
   );
 };
 
-export default page;
+export default NonPreference;
