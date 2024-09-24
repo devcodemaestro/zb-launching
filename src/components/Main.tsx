@@ -5,10 +5,10 @@ import Button from "./Button";
 const Main = () => {
   const [isEditing, setIsEditing] = useState(true); // 편집 상태 관리
   const [address, setAddress] = useState(""); // 수정 가능한 주소값 관리
-  const inputRef = useRef(null); // input의 포커스를 제어할 ref
+  const inputRef = useRef<HTMLInputElement>(null); // input의 포커스를 제어할 ref
 
   // Enter 키 처리 (onKeyDown 사용)
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: { key: string }) => {
     if (e.key === "Enter") {
       setIsEditing(false); // Enter를 누르면 텍스트로 변환
     }

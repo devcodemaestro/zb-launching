@@ -11,12 +11,12 @@ const page = () => {
       <div className="mt-8 w-76 p-2 flex justify-end items-center text-lg font-bold gap-6">
         <Button
           href="/preference"
-          type="baseClass"
+          type="primary"
           text="오늘 이게 땡겨요ㅎ"
         ></Button>
         <Button
           href="/not-preference"
-          type="baseClass"
+          type="primary"
           text="오늘 이게 안땡겨ㅜ"
         ></Button>
       </div>
