@@ -9,10 +9,8 @@ const NonPreference = () => {
   // 항목 선택 처리 함수
   const handleSelect = (item: string) => {
     if (selectedItems.includes(item)) {
-      // 이미 선택된 항목일 경우 제거
       setSelectedItems(selectedItems.filter((i) => i !== item));
     } else {
-      // 선택된 항목이 5개 미만일 때만 추가
       if (selectedItems.length < 5) {
         setSelectedItems([...selectedItems, item]);
       }
@@ -26,7 +24,7 @@ const NonPreference = () => {
     <main className="mx-auto mt-[1.5vh] text-center w-72">
       <div className="py-0.5 border-y-2 border-black"></div>
       <div className="text-left">
-        <h3 className="mt-[2vh] text-lg font-black">3. 오늘 이게 땡겨ㅎ</h3>
+        <h3 className="mt-[2vh] text-lg font-black">2. 오늘은 이게 안땡겨ㅎ</h3>
       </div>
       <div className="mt-[3vh] flex-wrap flex justify-center items-center text-lg font-bold gap-3">
         {[
@@ -39,13 +37,12 @@ const NonPreference = () => {
         ].map((item, index) => (
           <div
             key={index}
-            className={`w-22 h-36 py-3 mx-auto flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-black border-dashed bg-white hover:bg-gray-300 hover:border-gray-600 active:bg-gray-700 transition duration-300 ease-in-out 
+            className={`w-22 h-36 py-3 mx-auto flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-black border-dashed bg-white transition duration-300 ease-in-out cursor-pointer
               ${
                 isSelected(item.text)
-                  ? "border-gray-600 bg-gray-200"
-                  : "border-black bg-white"
-              } 
-              hover:bg-gray-200 hover:border-gray-600 active:bg-gray-700 transition duration-300 ease-in-out cursor-pointer`}
+                  ? "border-gray-600 bg-gray-400" // 선택된 항목에 적용되는 스타일
+                  : "hover:bg-gray-300 hover:border-gray-600 active:bg-gray-700"
+              }`}
             onClick={() => handleSelect(item.text)}
           >
             <div className="text-center">
