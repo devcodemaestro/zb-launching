@@ -37,11 +37,11 @@ const NonPreference = () => {
         ].map((item, index) => (
           <div
             key={index}
-            className={`w-22 h-36 py-3 mx-auto flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-black border-dashed bg-white transition duration-300 ease-in-out cursor-pointer
+            className={`w-22 h-36 py-3 mx-auto flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-black border-dashed bg-white hover:bg-gray-300 hover:border-gray-600 active:bg-gray-700 transition duration-300 ease-in-out cursor-pointer
               ${
                 isSelected(item.text)
-                  ? "border-gray-600 bg-gray-400" // 선택된 항목에 적용되는 스타일
-                  : "hover:bg-gray-300 hover:border-gray-600 active:bg-gray-700"
+                  ? "bg-gray-300 border-gray-500 " // 선택된 항목에 적용되는 스타일
+                  : ""
               }`}
             onClick={() => handleSelect(item.text)}
           >
