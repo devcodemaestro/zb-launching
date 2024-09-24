@@ -23,12 +23,14 @@ const Main = () => {
   };
 
   return (
-    <main className="mx-auto mt-3 text-center w-72">
+    <main className="mx-auto mt-[1.5vh] text-center w-72">
       <div className="py-0.5 border-y-2 border-black"></div>
       <div className="text-left">
-        <h3 className="mt-6 text-lg font-black">1. 회사 위치를 알려줄래?</h3>
+        <h3 className="mt-[2vh] text-lg font-black">
+          1. 회사 위치를 알려줄래?
+        </h3>
       </div>
-      <div className="mt-8 w-72 p-2 flex justify-center items-center text-lg font-bold gap-6">
+      <div className="mt-[3vh] w-72 flex justify-center items-center text-lg font-bold gap-6">
         {isEditing ? (
           <input
             ref={inputRef} // input에 ref 연결
@@ -47,10 +49,10 @@ const Main = () => {
           </p>
         )}
       </div>
-      <div className="mt-52">
+      <div className="mt-[29.8vh]">
         <Button href="/choose-type" type="action" text="시작하기"></Button>
       </div>
-      <div className="mt-10 py-0.5 border-y-2 border-black"></div>
+      <div className="mt-[2vh] py-0.5 border-y-2 border-black"></div>
     </main>
   );
 };

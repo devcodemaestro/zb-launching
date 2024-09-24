@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${pretendard.variable} antialiased max-w-[390px] mx-auto overflow-hidden box-border break-keep px-6 min-h-screen font-[family-name:var(--font-pretendard)]`}
+        className={`${pretendard.variable} antialiased max-w-[100vw] mx-auto overflow-hidden box-border break-keep px-6 min-h-[100vh] max-h-[100vh] font-[family-name:var(--font-pretendard)]`}
       >
         <Header />
         {children}
