@@ -31,11 +31,11 @@ const Page = () => {
         ].map((item, index) => (
           <div
             key={index}
-            className={`w-72 h-12 px-4 flex items-center justify-center rounded-xl border-2 border-black border-dashed bg-white hover:bg-gray-300 hover:border-gray-600 active:bg-gray-700 transition duration-300 ease-in-out cursor-pointer
+            className={`w-72 h-12 px-4 flex items-center justify-center rounded-xl border-2  border-black cursor-pointer   transition duration-300 ease-in-out 
               ${
                 isSelected(item)
-                  ? "bg-gray-300 border-gray-500 " // 선택된 항목 스타일
-                  : ""
+                  ? "bg-gray-500 border-gray-700 border-solid" // 선택된 항목 스타일
+                  : "hover:bg-gray-300 hover:border-gray-600 active:bg-gray-700 border-dashed"
               }`}
             onClick={() => handleSelect(item)}
           >
