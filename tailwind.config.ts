@@ -11,7 +11,7 @@ const config: Config = {
     "border-gray-500",
     "bg-gray-500",
     "border-gray-700",
-    "border-solid", // 선택된 항목 스타일
+    "border-solid",
     "bg-gray-300",
     "border-gray-600",
     "bg-gray-700",
@@ -22,10 +22,21 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
       },
       width: {
         "22": "88px",
+        "62": "246px",
+        "63": "250px",
         "69": "276px",
+      },
+      height: {
+        "46": "184px",
+        "47": "188px",
+      },
+      borderRadius: {
+        "32": "32px",
       },
     },
   },
