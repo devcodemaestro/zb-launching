@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./styles/globals.css";
