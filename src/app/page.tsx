@@ -5,15 +5,17 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <div className="mt-[20vh] mx-auto flex justify-center">
+      <div className="mt-[15vh] mx-auto flex justify-center">
         <SplashText
           fill="var(--color-primary)"
           className="w-full max-w-[153px] h-auto max-h-[79px]"
         />
       </div>
 
-      <div className="mx-auto mt-[2vh] w-44">
-        <p>회사 근처 맛집을 AI로 5초안에 찾아보세요!</p>
+      <div className="mx-auto mt-[2vh] w-44 text-center">
+        <p className="font-semibold text-xl font-[family-name:var(--font-pretendard)]">
+          회사 근처 맛집을 AI로 5초안에 찾아보세요!
+        </p>
       </div>
       <Image
         src="/images/bg-onboarding.webp"

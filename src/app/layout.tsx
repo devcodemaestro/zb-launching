@@ -138,7 +138,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${paperlogy.variable} ${pretendard.variable} antialiased max-w-[375px] w-full max-h-[812px] h-screen mx-auto overflow-hidden box-border break-keep min-h-[100vh] font-[family-name:var(--font-paperlogy)]`}
+        className={`${paperlogy.variable} ${pretendard.variable} antialiased max-w-[375px] w-full max-h-[1--v] h-screen mx-auto overflow-hidden box-border break-keep min-h-[100vh] font-[family-name:var(--font-paperlogy)]`}
       >
         {/* <Splash /> */}
 
