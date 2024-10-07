@@ -27,8 +27,6 @@ const FoodType = () => {
       setSelectedItem(index); // 다른 아이템 클릭 시 해당 아이템 선택
     }
   };
-  // ProgressBar 진행률을 관리하는 상태
-  const [progress, setProgress] = useState(50);
 
   const goBack = () => {
     router.back(); // 이전 페이지로 이동
@@ -43,7 +41,7 @@ const FoodType = () => {
           </button>
           <div
             style={{
-              left: `${progress}%`, // 진행률에 따른 위치
+              left: `50%`, // 진행률에 따른 위치
             }}
             className="absolute transform -translate-x-1/2 transition-all duration-300"
           >
