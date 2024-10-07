@@ -35,7 +35,7 @@ const page = () => {
                   height={28}
                   alt="아이콘 이미지"
                 />
-                <p>샐러드</p>
+                <p className="font-medium text-xs">샐러드</p>
               </button>
               <button className="w-22 border-2 flex justify-center gap-1 items-center rounded-3xl">
                 <Image
@@ -44,7 +44,7 @@ const page = () => {
                   height={28}
                   alt="아이콘 이미지"
                 />
-                <p>초밥</p>
+                <p className="font-medium text-xs">초밥</p>
               </button>
               <button className="w-22 border-2 flex justify-center gap-1 items-center rounded-3xl">
                 <Image
@@ -53,7 +53,7 @@ const page = () => {
                   height={28}
                   alt="아이콘 이미지"
                 />
-                <p>초밥</p>
+                <p className="font-medium text-xs">초밥</p>
               </button>
             </div>
           </div>
@@ -127,11 +127,11 @@ const page = () => {
           </div>
         </section>
 
-        <div className="mx-auto mt-10 w-80 h-14 bg-primary flex justify-center items-center rounded-xl text-white font-semibold font-[family-name:var(--font-pretendard)]">
-          <Link href="/main">
+        <Link href="/main">
+          <div className="mx-auto mt-10 w-80 h-14 bg-primary flex justify-center items-center rounded-xl text-white font-semibold font-[family-name:var(--font-pretendard)]">
             <p>메뉴 고르러 가기</p>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </main>
     </div>
   );
