@@ -1,21 +1,9 @@
 import type { Config } from "tailwindcss";
-
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  safelist: [
-    "bg-gray-300",
-    "border-gray-500",
-    "bg-gray-500",
-    "border-gray-700",
-    "border-solid",
-    "bg-gray-300",
-    "border-gray-600",
-    "bg-gray-700",
-    "border-dashed",
   ],
   theme: {
     extend: {
@@ -37,29 +25,33 @@ const config: Config = {
         selected: "var(--color-menu-selected)",
       },
       width: {
-        "15": "60px",
-        "17": "68px",
-        "22": "88px",
-        "37": "148px",
-        "39": "156px",
-        "62": "246px",
-        "63": "250px",
-        "69": "276px",
-        "78": "312px",
-        "84": "336px",
+        "15": "3.75rem",
+        "17": "4.25rem",
+        "22": "5.5rem",
+        "37": "9.25rem",
+        "39": "9.75rem",
+        "62": "15.375rem",
+        "63": "15.625rem",
+        "69": "17.25rem",
+        "78": "19.5rem",
+        "84": "21rem",
+        "86": "21.5rem",
+        "94": "23.5rem",
       },
       height: {
-        "15": "60px",
-        "18": "72px",
-        "46": "184px",
-        "47": "188px",
-        "30": "120px",
+        "15": "3.75rem",
+        "18": "4.5rem",
+        "30": "7.5rem",
+        "46": "11.5rem",
+        "47": "11.75rem",
+        "86": "21.5rem",
       },
       borderRadius: {
-        "32": "32px",
+        "32": "2rem",
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
+
 export default config;
