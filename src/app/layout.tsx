@@ -53,43 +53,7 @@ export const metadata: Metadata = {
         type: "image/png",
       },
     ],
-    apple: [
-      {
-        url: "/icons/apple-icon-57x57.png",
-      },
-      {
-        url: "/icons/apple-icon-60x60.png",
-      },
-      {
-        url: "/icons/apple-icon-72x72.png",
-      },
-      {
-        url: "/icons/apple-icon-76x76.png",
-      },
-      {
-        url: "/icons/apple-icon-114x114.png",
-      },
-      {
-        url: "/icons/apple-icon-120x120.png",
-      },
-      {
-        url: "/icons/apple-icon-144x144.png",
-      },
-      {
-        url: "/icons/apple-icon-152x152.png",
-      },
-      {
-        url: "/icons/apple-icon-180x180.png",
-      },
-    ],
   },
-  manifest: "/manifest.json",
-  // other: [
-  //   { name: "msapplication-TileColor", content: "/icons/ms-icon-70x70.png" },
-  //   { name: "msapplication-TileImage", content: "/icons/ms-icon-144x144.png" },
-  //   { name: "msapplication-TileImage", content: "/icons/ms-icon-150x150.png" },
-  //   { name: "msapplication-TileImage", content: "/icons/ms-icon-310x310.png" },
-  // ],
 
   // Open Graph 설정
   openGraph: {
@@ -99,7 +63,7 @@ export const metadata: Metadata = {
     url: "https://zb-launching.vercel.app/",
     images: [
       {
-        url: "https://zb-launching.vercel.app/",
+        url: "/images/og_images.png",
         width: 800,
         height: 600,
         alt: "점심 메뉴 추천 이미지",
@@ -123,7 +87,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   //모바일 브라우저에서 상태바의 색상을 설정할 수 있음.
-  // themeColor: "#ff8107",
+  // themeColor: "#fff",
   // icons: {
   //   icon: "/favicon.ico",
   //   apple: "/apple-touch-icon.png",
@@ -138,7 +102,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${paperlogy.variable} ${pretendard.variable} antialiased max-w-[375px] w-full max-h-[1--v] h-screen mx-auto overflow-hidden box-border break-keep min-h-[100vh] font-[family-name:var(--font-paperlogy)]`}
+        className={`${paperlogy.variable} ${pretendard.variable} antialiased max-w-[23.4375rem] w-full max-h-[100v] h-screen mx-auto overflow-hidden box-border break-keep min-h-[100vh] bg-white font-[family-name:var(--font-paperlogy)]`}
       >
         {/* <Splash /> */}
 
